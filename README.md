@@ -12,5 +12,5 @@
 9. php artisan serve (pour lancer un serveur web)
 10. URL : http://127.0.0.1:8000/projects
 
-##Run cypress
+## Run cypress
 1. npm run cypress
