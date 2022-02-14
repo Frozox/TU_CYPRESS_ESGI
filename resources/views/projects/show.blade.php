@@ -4,17 +4,17 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
+            <div class="float-left">
                 <h2> {{ $project->name }}</h2>
             </div>
-            <div class="pull-right">
+            <div class="float-right">
                 <a class="btn btn-primary" href="{{ route('projects.index') }}" title="Go back"> <i
                         class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>

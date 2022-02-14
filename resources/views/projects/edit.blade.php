@@ -3,10 +3,10 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Project</h2>
+            <div class="float-left">
+                <h2>Edition du projet "{{ $project->name }}"</h2>
             </div>
-            <div class="pull-right">
+            <div class="float-right">
                 <a class="btn btn-primary" href="{{ route('projects.index') }}" title="Go back"> <i
                         class="fas fa-backward "></i> </a>
             </div>
@@ -28,30 +28,30 @@
         @csrf
         @method('PUT')
 
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Name:</strong>
+                    <strong>Nom:</strong>
                     <input type="text" name="name" value="{{ $project->name }}" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Introduction:</strong>
+                    <strong>Résumé:</strong>
                     <textarea class="form-control" style="height:50px" name="introduction"
                         placeholder="Introduction">{{ $project->introduction }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Location:</strong>
+                    <strong>Lieux:</strong>
                     <input type="text" name="location" class="form-control" placeholder="{{ $project->location }}"
                         value="{{ $project->location }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Cost:</strong>
+                    <strong>Coût:</strong>
                     <input type="number" name="cost" class="form-control" placeholder="{{ $project->cost }}"
                         value="{{ $project->location }}">
                 </div>

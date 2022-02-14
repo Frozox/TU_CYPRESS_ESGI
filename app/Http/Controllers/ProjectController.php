@@ -14,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::latest()->paginate(5);
+        $projects = Project::latest()->simplePaginate(5);
 
         return view('projects.index', compact('projects'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
