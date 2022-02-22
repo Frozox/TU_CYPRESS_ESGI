@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b13af8f4-d1f6-41d3-9c7b-70d47cda6f09" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/integration/project/index.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/project/index.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/projects/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +165,7 @@
       <workItem from="1644858737751" duration="3431000" />
       <workItem from="1645114042895" duration="1989000" />
       <workItem from="1645479534479" duration="77000" />
+      <workItem from="1645544112327" duration="4158000" />
     </task>
     <servers />
   </component>
