@@ -1,6 +1,10 @@
+import {address} from "./environment";
+
+const url_test = address+"/projects";
+
 describe('Edition des données', () => {
     it('clicks the link "type"', () => {
-        cy.visit('http://127.0.0.1:8000/projects')
+        cy.visit(url_test)
 
         cy.get('form>a').eq(1).click()
 
@@ -37,7 +41,7 @@ describe('Edition des données', () => {
 
 describe('Edition d\'une donnée', () => {
     it('clicks the link "type"', () => {
-        cy.visit('http://127.0.0.1:8000/projects')
+        cy.visit(url_test)
 
         cy.get('form>a').eq(1).click()
 
@@ -55,7 +59,7 @@ describe('Edition d\'une donnée', () => {
 
 describe('Aucun changement', () => {
     it('clicks the link "type"', () => {
-        cy.visit('http://127.0.0.1:8000/projects')
+        cy.visit(url_test)
 
         cy.get('form>a').eq(1).click()
 

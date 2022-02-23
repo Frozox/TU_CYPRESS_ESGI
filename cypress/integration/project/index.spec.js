@@ -1,9 +1,10 @@
+import {address} from "../environment";
 
-const url = 'http://localhost:81/projects';
+const url_test = address+"/projects";
 
 describe('indexProjects', () => {
     beforeEach(() => {
-        cy.visit(url);
+        cy.visit(url_test);
     })
 
     it('should display_table', function () {

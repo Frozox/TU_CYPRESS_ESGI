@@ -1,6 +1,10 @@
+import {address} from "./environment";
+
+const url_test = address+"/projects";
+
 describe('Visualisation des données', () => {
     it('clicks the link "type"', () => {
-        cy.visit('http://127.0.0.1:8000/projects')
+        cy.visit(url_test)
 
         cy.get('form>a').eq(0).click()
 
