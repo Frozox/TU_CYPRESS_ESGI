@@ -1,10 +1,8 @@
-import {address} from "./environment";
-
-const url_test = address+"/projects";
+import {url_projects} from "./environment";
 
 describe('Visualisation des données', () => {
     it('clicks the link "type"', () => {
-        cy.visit(url_test)
+        cy.visit(url_projects)
 
         cy.get('form>a').eq(0).click()
 

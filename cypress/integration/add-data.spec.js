@@ -1,10 +1,8 @@
-import {address} from "./environment";
-
-const url_test = address+"/projects";
+import {url_projects} from "./environment";
 
 describe('Ajoute correctement une ligne en bdd', () => {
     it('clicks the link "type"', () => {
-        cy.visit(url_test)
+        cy.visit(url_projects)
 
         cy.get('.btn-success').click()
 
@@ -30,7 +28,7 @@ describe('Ajoute correctement une ligne en bdd', () => {
 
 describe('Prix est une chaine', () => {
     it('clicks the link "type"', () => {
-        cy.visit(url_test)
+        cy.visit(url_projects)
 
         cy.get('.btn-success').click()
 
@@ -56,7 +54,7 @@ describe('Prix est une chaine', () => {
 
 describe('Test d\'injection SQL', () => {
     it('clicks the link "type"', () => {
-        cy.visit(url_test)
+        cy.visit(url_projects)
 
         cy.get('.btn-success').click()
 
@@ -82,7 +80,7 @@ describe('Test d\'injection SQL', () => {
 
 describe('Pas d introduction', () => {
     it('clicks the link "type"', () => {
-        cy.visit(url_test)
+        cy.visit(url_projects)
 
         cy.get('.btn-success').click()
 
@@ -108,7 +106,7 @@ describe('Pas d introduction', () => {
 
 describe('Pas de location', () => {
     it('clicks the link "type"', () => {
-        cy.visit(url_test)
+        cy.visit(url_projects)
 
         cy.get('.btn-success').click()
 

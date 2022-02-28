@@ -33,36 +33,42 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($projects as $project)
-                <tr id="project_{{$project['id']}}">
-                    <td>{{ ++$i }}</td>
-                    <td>{{ $project->name }}</td>
-                    <td>{{ $project->introduction }}</td>
-                    <td>{{ $project->location }}</td>
-                    <td>{{ $project->cost }}</td>
-                    <td>{{ date_format($project->created_at, 'jS M Y') }}</td>
-                    <td>
-                        <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
+            @if(isset($projects) && count($projects) > 0)
+                @foreach ($projects as $project)
+                    <tr id="project_{{$project['id']}}">
+                        <td>{{ ++$i }}</td>
+                        <td>{{ $project->name }}</td>
+                        <td>{{ $project->introduction }}</td>
+                        <td>{{ $project->location }}</td>
+                        <td>{{ $project->cost }}</td>
+                        <td>{{ date_format($project->created_at, 'jS M Y') }}</td>
+                        <td>
+                            <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
 
-                            <a href="{{ route('projects.show', $project->id) }}" title="show">
-                                <i class="fas fa-eye text-success  fa-lg"></i>
-                            </a>
+                                <a href="{{ route('projects.show', $project->id) }}" title="show">
+                                    <i class="fas fa-eye text-success  fa-lg"></i>
+                                </a>
 
-                            <a href="{{ route('projects.edit', $project->id) }}">
-                                <i class="fas fa-edit  fa-lg"></i>
+                                <a href="{{ route('projects.edit', $project->id) }}">
+                                    <i class="fas fa-edit  fa-lg"></i>
 
-                            </a>
+                                </a>
 
-                            @csrf
-                            @method('DELETE')
+                                @csrf
+                                @method('DELETE')
 
-                            <button type="submit" title="delete" style="border: none; background-color:transparent;">
-                                <i class="fas fa-trash fa-lg text-danger"></i>
-                            </button>
-                        </form>
-                    </td>
+                                <button type="submit" title="delete" style="border: none; background-color:transparent;">
+                                    <i class="fas fa-trash fa-lg text-danger"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            @else
+                <tr>
+                    <td class="text-danger text-center" colspan="7">Aucune donnée disponible</td>
                 </tr>
-            @endforeach
+            @endif
         </tbody>
     </table>
 

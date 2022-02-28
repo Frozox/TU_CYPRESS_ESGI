@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b13af8f4-d1f6-41d3-9c7b-70d47cda6f09" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/add-data.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/add-data.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/delete-data.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/delete-data.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/edit-data.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/edit-data.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/integration/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/environment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cypress/integration/project/index.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/project/index.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/see-data.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/see-data.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/plugins/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/plugins/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/projects/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +178,8 @@
       <workItem from="1645634751545" duration="584000" />
       <workItem from="1645637335634" duration="303000" />
       <workItem from="1645638390734" duration="4892000" />
-      <workItem from="1645645328854" duration="764000" />
+      <workItem from="1645645328854" duration="1321000" />
+      <workItem from="1646078265226" duration="3842000" />
     </task>
     <servers />
   </component>
