@@ -49,7 +49,7 @@ class ProjectController extends Controller
 
         Project::create($request->all());
 
-        return new Response(redirect()->route('projects.index')->with('success', 'Project créé avec succès.'));
+        return new Response(redirect()->route('projects.index')->with('success', 'Projet créé avec succès.'));
     }
 
     /**
@@ -98,6 +98,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return new Response(redirect()->route('projects.index')->with('success', 'Project supprimé avec succès'));
+        return new Response(redirect()->route('projects.index')->with('success', 'Projet supprimé avec succès'));
     }
 }
