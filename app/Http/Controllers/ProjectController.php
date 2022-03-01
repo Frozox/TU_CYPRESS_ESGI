@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ProjectController extends Controller
 {
+    private $validator = [
+        'name' => 'required|string|max:255',
+        'introduction' => 'required|string|max:500',
+        'location' => 'required|max:255',
+        'cost' => 'required|numeric|min:0'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +24,7 @@ class ProjectController extends Controller
     {
         $projects = Project::latest()->simplePaginate(5);
 
-        return view('projects.index', compact('projects'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return new Response(view('projects.index', compact('projects'))->with('i', (request()->input('page', 1) - 1) * 5));
     }
 
     /**
@@ -27,7 +34,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+        return new Response(view('projects.create'));
     }
 
     /**
@@ -38,17 +45,11 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'introduction' => 'required',
-            'location' => 'required',
-            'cost' => 'required'
-        ]);
+        $request->validate($this->validator);
 
         Project::create($request->all());
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project created successfully.');
+        return new Response(redirect()->route('projects.index')->with('success', 'Project créé avec succès.'));
     }
 
     /**
@@ -59,7 +60,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('projects.show', compact('project'));
+        return new Response(view('projects.show', compact('project')));
     }
 
     /**
@@ -70,7 +71,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('projects.edit', compact('project'));
+        return new Response(view('projects.edit', compact('project')));
     }
     /**
      * Update the specified resource in storage.
@@ -81,16 +82,11 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        $request->validate([
-            'name' => 'required',
-            'introduction' => 'required',
-            'location' => 'required',
-            'cost' => 'required'
-        ]);
+        $request->validate($this->validator);
+
         $project->update($request->all());
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project updated successfully');
+        return new Response(redirect()->route('projects.index')->with('success', 'Projet modifié avec succès'));
     }
     /**
      * Remove the specified resource from storage.
@@ -102,7 +98,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project deleted successfully');
+        return new Response(redirect()->route('projects.index')->with('success', 'Project supprimé avec succès'));
     }
 }

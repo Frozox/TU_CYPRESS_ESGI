@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title',$project->name)
 
 @section('content')
     <div class="row">
@@ -8,8 +9,9 @@
                 <h2> {{ $project->name }}</h2>
             </div>
             <div class="float-right">
-                <a class="btn btn-primary" href="{{ route('projects.index') }}" title="Go back"> <i
-                        class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{ route('projects.index') }}" title="Retour">
+                    <i class="fas fa-backward "></i>
+                </a>
             </div>
         </div>
     </div>
