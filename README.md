@@ -8,7 +8,7 @@
 5. copier .env.example -> .env
 6. php artisan key:generate
 7. Ajout des infos de BDD dans le fichier .env
-8. ``php artisan migrate``
+8. ``php artisan migrate:fresh --seed``
 9. ``php artisan serve`` (pour lancer un serveur web) :
    1. URL : http://127.0.0.1:8000/projects
 
