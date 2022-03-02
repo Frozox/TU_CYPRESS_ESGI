@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
-                <h2>Création d'un projet</h2>
+                <h1>Création d'un projet</h1>
             </div>
             <div class="float-right">
                 <a class="btn btn-primary" href="{{ route('projects.index') }}" title="Retour">
