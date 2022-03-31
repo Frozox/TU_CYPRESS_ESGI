@@ -27,59 +27,61 @@
     </div>
     @endif
 
-    <div class="row">
-        <div class="col-lg-12">
-            <table class="table table-striped custom-table">
-                <thead>
-                    <tr id="tableHeader">
-                        <th style="width: 5%">N°</th>
-                        <th style="width: 20%">NOM</th>
-                        <th style="width: 25%;">RESUME</th>
-                        <th style="width: 15%;">LIEU</th>
-                        <th style="width: 10%;">COUT (€)</th>
-                        <th style="width: 15%;">CREATION</th>
-                        <th style="width: 10%">ACTIONS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if(isset($projects) && count($projects) > 0)
-                        @foreach ($projects as $project)
-                            <tr id="project_{{$project['id']}}">
-                                <td class="text-center" >{{ ++$i }}</td>
-                                <td>{{ $project->name }}</td>
-                                <td class="text-truncate">{{ $project->introduction }}</td>
-                                <td>{{ $project->location }}</td>
-                                <td class="text-center">{{ $project->cost }}</td>
-                                <td>{{ date_format($project->created_at, 'j M Y') }}</td>
-                                <td>
-                                    <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
-
-                                        <a href="{{ route('projects.show', $project->id) }}" title="show">
-                                            <i class="fas fa-eye fa-lg"></i>
-                                        </a>
-
-                                        <a href="{{ route('projects.edit', $project->id) }}">
-                                            <i class="fas fa-edit fa-lg"></i>
-                                        </a>
-
-                                        @csrf
-                                        @method('DELETE')
-
-                                        <button class="bg-transparent pe-auto" type="submit" title="delete" style="border: none; cursor: pointer">
-                                            <i class="fas fa-trash fa-lg"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td class="text-danger text-center" colspan="7">Aucune donnée disponible</td>
+    <div class="responsive-row">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped custom-table">
+                    <thead>
+                        <tr id="tableHeader">
+                            <th style="width: 5%">N°</th>
+                            <th style="width: 20%">NOM</th>
+                            <th style="width: 25%;">RESUME</th>
+                            <th style="width: 15%;">LIEU</th>
+                            <th style="width: 10%;">COUT (€)</th>
+                            <th style="width: 15%;">CREATION</th>
+                            <th style="width: 10%">ACTIONS</th>
                         </tr>
-                    @endif
-                </tbody>
-            </table>
-            {!! $projects->links() !!}
+                    </thead>
+                    <tbody>
+                        @if(isset($projects) && count($projects) > 0)
+                            @foreach ($projects as $project)
+                                <tr id="project_{{$project->id}}">
+                                    <td class="text-center" >{{ ++$i }}</td>
+                                    <td>{{ $project->name }}</td>
+                                    <td class="text-truncate">{{ $project->introduction }}</td>
+                                    <td>{{ $project->location }}</td>
+                                    <td class="text-center">{{ $project->cost }}</td>
+                                    <td>{{ date_format($project->created_at, 'j M Y') }}</td>
+                                    <td>
+                                        <form id="destroy_project_{{$project->id}}" action="{{ route('projects.destroy', $project->id) }}" method="POST">
+
+                                            <a href="{{ route('projects.show', $project->id) }}" title="show">
+                                                <i class="fas fa-eye fa-lg"></i>
+                                            </a>
+
+                                            <a href="{{ route('projects.edit', $project->id) }}" title="edit">
+                                                <i class="fas fa-edit fa-lg"></i>
+                                            </a>
+
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <a href="javascript:{}" onclick="document.getElementById('destroy_project_{{$project->id}}').submit();" title="delete">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td class="text-danger text-center" colspan="7">Aucune donnée disponible</td>
+                            </tr>
+                        @endif
+                    </tbody>
+                </table>
+                {!! $projects->links() !!}
+            </div>
         </div>
     </div>
 @endsection

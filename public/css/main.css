@@ -37,6 +37,17 @@ label {
     letter-spacing: .2rem;
 }
 
+.page-link {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0,0,0,.05);
+    border: none;
+}
+
+.page-item.disabled .page-link {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0,0,0,.05);
+}
+
 .custom-table {
     min-width: 900px;
     max-width: content-box;
@@ -89,3 +100,12 @@ label {
     margin-bottom: 15px; }
 .custom-table .box td, .custom-table .box th {
     border: none !important; }
+
+/** Responsive **/
+.responsive-row > .row {
+    overflow-x: auto;
+}
+.responsive-row > .row > .col-lg-12 {
+    display: inline-block;
+    float: none;
+}
