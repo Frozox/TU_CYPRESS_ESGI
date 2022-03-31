@@ -1,9 +1,8 @@
 
 <form
-    @if(isset($project)) action="{{ route('projects.update', $project->id) }}"
-    @else action="{{ route('projects.store') }}"
+    @if(isset($project)) action="{{ route('projects.update', $project->id) }}" method="PUT"
+    @else action="{{ route('projects.store') }}" method="POST">
     @endif
-    method="POST">
     @csrf
     <div class="row mt-5">
         <div class="col-xs-12 col-sm-12 col-md-12">

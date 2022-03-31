@@ -7,5 +7,5 @@ export const environment = process.env.APP_ENV;
 */
 export const url = Cypress.env("URLTEST");
 export const server_port = Cypress.env("PORTTEST");
-export const address = url + ":" + 81;
+export const address = url + ":" + server_port;
 export const url_projects = address+"/projects";

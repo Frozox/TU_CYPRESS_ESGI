@@ -1,14 +1,13 @@
 import {url_projects} from "../environment";
-import {shuffle} from "lodash/collection";
 
-describe('correctTableWithItems', () => {
+describe('Tableau de projets pleine', () => {
     beforeEach(() => {
         cy.visit(url_projects);
     });
 
     it('should display_table', function () {
         cy.get('table')
-            .should('have.class','table-striped table-bordered table-responsive-lg');
+            .should('have.class','table table-striped custom-table');
 
         cy.get('table')
             .children('thead')
@@ -22,23 +21,13 @@ describe('correctTableWithItems', () => {
             .should('have.length.below',6);
     });
 
-    it('should have_pagination', function () {
-        cy.get('nav')
-            .should('have.attr','role','navigation')
-
-        cy.get('nav')
-            .children('a')
-            .should('have.length',1)
-            .should('have.attr','href',url_projects+'?page=2');
-
-        cy.get('nav')
-            .children('li')
-            .should('have.class','disabled');
+    it('should have_pagination', () => {
+        cy.pagination(url_projects+'?page=2');
     });
 });
 
 
-describe('correctTableWithoutItems', () => {
+describe('Tableau de projets vide', () => {
     beforeEach(() => {
         cy.visit({
             url: url_projects+"?page=999",
@@ -47,7 +36,7 @@ describe('correctTableWithoutItems', () => {
 
     it('should display_table', function () {
         cy.get('table')
-            .should('have.class','table-striped table-bordered table-responsive-lg');
+            .should('have.class','table table-striped custom-table');
 
         cy.get('table')
             .children('thead')
@@ -69,17 +58,8 @@ describe('correctTableWithoutItems', () => {
             .should('have.text','Aucune donnée disponible')
     });
 
-    it('should have_pagination', function () {
-        cy.get('nav')
-            .should('have.attr','role','navigation')
-
-        cy.get('nav')
-            .children('a')
-            .should('have.length',1)
-            .should('have.attr','href',url_projects+'?page=998');
-
-        cy.get('nav')
-            .children('li')
-            .should('have.class','disabled');
+    it('should have_pagination', () => {
+        cy.pagination(url_projects+'?page=998');
     });
 });
+

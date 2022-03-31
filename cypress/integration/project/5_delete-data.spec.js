@@ -1,7 +1,7 @@
-import {url_projects} from "./environment";
+import {url_projects} from "../environment";
 
 describe('Supression de données', () => {
-    it('clicks the link "type"', () => {
+    it('shouldDeleteFirstProject', () => {
         cy.visit(url_projects)
         cy.get('[title=delete]')
             .first()
@@ -9,5 +9,6 @@ describe('Supression de données', () => {
 
         cy.get('.alert-success')
             .should('be.visible')
+            .and('contain.text','Projet supprimé avec succès')
     });
 });

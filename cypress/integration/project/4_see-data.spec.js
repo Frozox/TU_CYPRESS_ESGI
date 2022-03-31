@@ -1,11 +1,8 @@
 import {url_projects} from "../environment";
 
 describe('Visualisation des données', () => {
-    beforeEach(() => {
+    it('shouldShowFirstProject', () => {
         cy.visit(url_projects);
-    });
-
-    it('clicks the link "type"', () => {
 
         cy.get('form > a[title="show"]').eq(0)
             .should('have.attr','href')

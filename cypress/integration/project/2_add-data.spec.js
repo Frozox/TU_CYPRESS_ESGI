@@ -1,10 +1,18 @@
-import {url_projects} from "./environment";
+import {url_projects} from "../environment";
+
+describe('Bouton création de projet', () => {
+    it('should redirect to create view', function () {
+        cy.visit(url_projects);
+
+        cy.get('a[class="btn btn-success"]')
+            .should("have.attr","href")
+            .and('include','/projects/create')
+    });
+});
 
 describe('Ajoute correctement une ligne en bdd', () => {
-    it('clicks the link "type"', () => {
-        cy.visit(url_projects)
-
-        cy.get('.btn-success').click()
+    it('shouldCreateNewProject', () => {
+        cy.visit(url_projects+"/create")
 
         cy.get('[name=name]')
             .type('Raph')
@@ -22,15 +30,13 @@ describe('Ajoute correctement une ligne en bdd', () => {
             .type('100')
             .should('have.value', '100')
 
-        cy.contains('Submit').click()
+        cy.get('[type="submit"]').click()
     })
 })
 
 describe('Prix est une chaine', () => {
-    it('clicks the link "type"', () => {
-        cy.visit(url_projects)
-
-        cy.get('.btn-success').click()
+    it('shouldReturnCostError"', () => {
+        cy.visit(url_projects+"/create")
 
         cy.get('[name=name]')
             .type('Raph')
@@ -48,15 +54,15 @@ describe('Prix est une chaine', () => {
             .type('J\'essaye d\'ecrire un truc')
             .should('have.value', '')
 
-        cy.contains('Submit').click()
+        cy.get('[type="submit"]').click()
+
+        cy.get('.alert').should('contain.text','Le champ cost est obligatoire.')
     })
 })
 
 describe('Test d\'injection SQL', () => {
-    it('clicks the link "type"', () => {
-        cy.visit(url_projects)
-
-        cy.get('.btn-success').click()
+    it('shouldCreateNewProject', () => {
+        cy.visit(url_projects+"/create")
 
         cy.get('[name=name]')
             .type('"OR 1=1')
@@ -74,15 +80,13 @@ describe('Test d\'injection SQL', () => {
             .type('100')
             .should('have.value', '100')
 
-        cy.contains('Submit').click()
+        cy.get('[type="submit"]').click()
     })
 })
 
 describe('Pas d introduction', () => {
-    it('clicks the link "type"', () => {
-        cy.visit(url_projects)
-
-        cy.get('.btn-success').click()
+    it('shouldReturnIntroductionError', () => {
+        cy.visit(url_projects+"/create")
 
         cy.get('[name=name]')
             .type('Raph')
@@ -100,15 +104,15 @@ describe('Pas d introduction', () => {
             .type('100')
             .should('have.value', '100')
 
-        cy.contains('Submit').click()
+        cy.get('[type="submit"]').click()
+
+        cy.get('.alert').should('contain.text','Le champ introduction est obligatoire.')
     })
 })
 
 describe('Pas de location', () => {
-    it('clicks the link "type"', () => {
-        cy.visit(url_projects)
-
-        cy.get('.btn-success').click()
+    it('shouldReturnLocationError', () => {
+        cy.visit(url_projects+"/create")
 
         cy.get('[name=name]')
             .type('Raph')
@@ -126,6 +130,8 @@ describe('Pas de location', () => {
             .type('100')
             .should('have.value', '100')
 
-        cy.contains('Submit').click()
+        cy.get('[type="submit"]').click()
+
+        cy.get('.alert').should('contain.text','Le champ location est obligatoire.')
     })
 })
