@@ -23,3 +23,20 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('pagination',(url_href) => {
+    cy.get('nav')
+        .should('have.attr','role','navigation')
+
+    cy.get('nav ul li[aria-disabled="false"]')
+        .should('not.have.class','disabled')
+        .children('a')
+        .should('have.length',1)
+        .should('have.attr','href',url_href);
+
+    cy.get('nav ul li[aria-disabled="true"]')
+        .should('have.class','disabled')
+        .children('a')
+        .should('have.length',1)
+        .should('not.have.attr','href');
+});
