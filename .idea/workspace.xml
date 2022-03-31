@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b13af8f4-d1f6-41d3-9c7b-70d47cda6f09" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/environment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/project/add-data.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/project/add-data.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/project/delete-data.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/project/delete-data.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/project/edit-data.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/project/edit-data.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/project/index.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/project/index.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/project/see-data.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/project/see-data.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/support/commands.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/commands.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/projects/forms/project_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/forms/project_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-bootstrap-4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-bootstrap-4.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +201,7 @@
       <workItem from="1646242168521" duration="4828000" />
       <workItem from="1647362754580" duration="29000" />
       <workItem from="1648717956243" duration="9295000" />
-      <workItem from="1648740906573" duration="6304000" />
+      <workItem from="1648740906573" duration="7330000" />
     </task>
     <servers />
   </component>
