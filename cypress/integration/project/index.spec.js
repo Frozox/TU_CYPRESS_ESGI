@@ -31,7 +31,9 @@ describe('correctTableWithItems', () => {
             .should('have.length',1)
             .should('have.attr','href',url_projects+'?page=2');
 
-        cy.get('nav').children('span');
+        cy.get('nav')
+            .children('li')
+            .should('have.class','disabled');
     });
 });
 
@@ -76,6 +78,8 @@ describe('correctTableWithoutItems', () => {
             .should('have.length',1)
             .should('have.attr','href',url_projects+'?page=998');
 
-        cy.get('nav').children('span');
+        cy.get('nav')
+            .children('li')
+            .should('have.class','disabled');
     });
 });
